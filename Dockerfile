@@ -5,8 +5,8 @@ RUN apk --no-cache add \
 		ca-certificates \
 		curl
 
-ENV PROMETHEUS_VERSION="2.6.1" \
-	PROMETHEUS_CHECKSUM="cd14144052e855c1f81b9b3f7324fde7cdea792b72889baacf692af28450f720"
+ENV PROMETHEUS_VERSION="2.7.0" \
+	PROMETHEUS_CHECKSUM="a4d6674c3e81d85f1063818daecfe7ae14ce61d3524f32480530fda48b2a1e12"
 
 RUN PKG_NAME=prometheus-${PROMETHEUS_VERSION}.linux-armv7 && cd /tmp \
 	&& curl -sSL -O https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/${PKG_NAME}.tar.gz \
