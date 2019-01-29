@@ -10,7 +10,7 @@ ENV PROMETHEUS_VERSION="2.7.0" \
 
 RUN PKG_NAME=prometheus-${PROMETHEUS_VERSION}.linux-armv7 && cd /tmp \
 	&& curl -sSL -O https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/${PKG_NAME}.tar.gz \
-	&& echo "${PROMETHEUS_CHECKSUM} ${PKG_NAME}.tar.gz" | sha256sum -c \
+	&& echo "${PROMETHEUS_CHECKSUM} ${PKG_NAME}.tar.gz" | sha256sum \
 	&& tar -xf ${PKG_NAME}.tar.gz \
 	&& mkdir /etc/prometheus \
 	&& mv ${PKG_NAME}/consoles /etc/prometheus \
