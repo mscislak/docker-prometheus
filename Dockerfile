@@ -25,7 +25,7 @@ RUN PKG_NAME=prometheus-${PROMETHEUS_VERSION}.linux-armv7 && cd /tmp \
 USER       nobody
 EXPOSE     9090
 VOLUME     [ "/var/lib/prometheus" ]
-WORKDIR    /prometheus
+WORKDIR    /var/lib/prometheus
 ENTRYPOINT [ "/usr/local/bin/prometheus" ]
 CMD        [ "--config.file=/etc/prometheus/prometheus.yml", \
              "--storage.tsdb.path=/var/lib/prometheus", \
